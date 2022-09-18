@@ -81,10 +81,8 @@ const menu = [
       desc: `Food that is grilled, roasted, or broiled and gains a blackened exterior coupled with a smoky flavor.`,
     },
   ];
-  // get parent element
   const sectionCenter = document.querySelector(".section-center");
   const btnContainer = document.querySelector(".btn-container");
-  // display all items when page loads
   window.addEventListener("DOMContentLoaded", function () {
     diplayMenuItems(menu);
     displayMenuButtons();
@@ -92,9 +90,7 @@ const menu = [
   
   function diplayMenuItems(menuItems) {
     let displayMenu = menuItems.map(function (item) {
-      // console.log(item);
-  
-      return `<article class="menu-item">
+     return `<article class="menu-item">
             <img src=${item.img} alt=${item.title} class="photo" />
             <div class="item-info">
               <header>
@@ -108,8 +104,7 @@ const menu = [
           </article>`;
     });
     displayMenu = displayMenu.join("");
-    // console.log(displayMenu);
-  
+    
     sectionCenter.innerHTML = displayMenu;
   }
   function displayMenuButtons() {
@@ -136,11 +131,9 @@ const menu = [
   
     filterBtns.forEach(function (btn) {
       btn.addEventListener("click", function (e) {
-        // console.log(e.currentTarget.dataset);
-        const category = e.currentTarget.dataset.id;
+       const category = e.currentTarget.dataset.id;
         const menuCategory = menu.filter(function (menuItem) {
-          // console.log(menuItem.category);
-          if (menuItem.category === category) {
+         if (menuItem.category === category) {
             return menuItem;
           }
         });
